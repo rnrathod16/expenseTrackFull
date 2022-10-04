@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/"><Signup /></Route>
           <Route exact path="/login"><Login /></Route>
           <Route exact path="/home">
-            {logged !== 'not' ? <Expense /> : <Redirect to="/login" />}
+            {logged ? <Expense /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </newContext.Provider>

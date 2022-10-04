@@ -11,21 +11,21 @@ const Navbar = () => {
     const deleteToken = (e) => {
         e.preventDefault();
         // setid(null)
-        localStorage.setItem('id', 'not');
-        localStorage.setItem('username', null);
+        localStorage.removeItem('id');
+        localStorage.removeItem('username');
 
         setCount(400);
         history.push("/login")
     }
 
     const Nav = () => {
-        return (id === 'not' ? <><li className="nav-item">
+        return (id ? <><li className="nav-item">
+            <NavLink to="/login" className="nav-link" onClick={deleteToken}>Logout</NavLink>
+        </li></> : <><li className="nav-item">
             <NavLink className="nav-link" to="/login">Login</NavLink>
         </li>
             <li className="nav-item">
                 <NavLink className="nav-link" to="/">Signup</NavLink>
-            </li></> : <><li className="nav-item">
-                <NavLink to="/login" className="nav-link" onClick={deleteToken}>Logout</NavLink>
             </li></>)
     }
 
@@ -41,7 +41,7 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <span className="nav-link" style={{ color: "white" }}> {id === 'not' ? '' : `Welcome ${name}`}</span>
+                                <span className="nav-link" style={{ color: "white" }}> {id ? `Welcome ${name}` : ''}</span>
                             </li>
                             <li className="nav-item active">
                                 <NavLink className="nav-link" to="/home">Home</NavLink>
