@@ -29,14 +29,16 @@ export function getAvail(data) {
     let t = 0;
     let color = '';
     amountSum.map((val) => {
-        if (val.type == "cash") {
+        if (val.type === "cash") {
 
             t = t + val.total;
-        } else if (val.type == "expense") {
+        } else if (val.type === "expense") {
             t = t - val.total;
         } else {
             t = t - val.total;
         }
+
+        return 0;
     })
 
     // for (let i = 0; i < 3; i++) {

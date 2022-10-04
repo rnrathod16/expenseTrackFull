@@ -24,7 +24,7 @@ const Signup = () => {
 
             if (result) {
 
-                window.alert("userInserted")
+                window.alert("Account Created 😄")
                 history.push("/login");
             }
 

@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import 'boxicons';
 import "./List.css"
 import axios from 'axios'
 import { newContext } from '../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 const List = () => {
 
@@ -71,7 +72,7 @@ function Transactions({ category, color, fun }) {
         <div className="d-flex justify-content-center rounded shadow p-2 m-2" style={{ borderLeft: `8px solid ${color ?? ""}` }}>
             <span className='d-block w-100'>{category.title ?? ''} </span>
             <span className='d-block w-100' style={{ color: `${color}` }}>{category.amount ?? ''} Rs</span>
-            <button className='butn' onClick={fu}><box-icon size="20px" color={"red"} name="trash" /></button>
+            <button className='butn' onClick={fu}><FontAwesomeIcon icon={faCircleXmark} color="red" /></button>
 
         </div>
     )
