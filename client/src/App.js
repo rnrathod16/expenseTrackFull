@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
+import Footer from "./components/Footer/Footer";
 
 export const newContext = createContext();
 function App() {
@@ -31,6 +32,7 @@ function App() {
             {logged ? <Expense /> : <Redirect to="/login" />}
           </Route>
         </Switch>
+        <Footer />
       </newContext.Provider>
     </>
   );

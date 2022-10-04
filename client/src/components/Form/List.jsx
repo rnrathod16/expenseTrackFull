@@ -48,7 +48,7 @@ const List = () => {
         <>
             <div className="d-flex flex-column">{dm.length === 0 ? <h4 className='text-center mt-5'>No Transactions</h4> :
                 <><h4 className='text-center mt-5'>History</h4>
-                    <div className='scrol mb-5'>
+                    <div className='scrol' style={{ marginBottom: "5rem" }}>
                         {dm.map((val, i) => {
                             const color = getColor(val.type);
                             return <Transactions category={val} key={i} color={color} fun={deleteNote} />
