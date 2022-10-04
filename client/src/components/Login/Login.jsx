@@ -53,6 +53,39 @@ const Login = () => {
         }
     }
 
+    const demoLog = async (e) => {
+        e.preventDefault();
+        // const { username, password } = log;
+
+        const username = 'demoUser';
+        const password = '1234';
+        try {
+
+            const result = await axios.post("http://localhost:5000/login", { username, password });
+
+            if (result) {
+
+                const token = result.data.token;
+                const id = result.data.dat;
+                const name = result.data.usename;
+
+                // setid(id);
+                setCount(1200);
+                localStorage.setItem("token", token);
+                localStorage.setItem("id", id);
+                localStorage.setItem("username", name);
+
+
+                history.push("/home");
+            }
+
+        } catch (error) {
+            console.log(error.response.data.message);
+            window.alert(error.response.data.message);
+
+        }
+    }
+
     return (
         <>
             <div className="container row m-auto mt-5 shadow p-3 mb-2 bg-body rounded">
@@ -72,7 +105,7 @@ const Login = () => {
                             <input type="password" className="form-control" name="password" value={log.password} onChange={handelInp} id="exampleInputPassword1" />
                         </div>
                         <button type="submit" className="btn btn-primary" onClick={postData}>Login</button>
-                        <button type="submit" className="btn btn-primary m-3">Demo Login</button>
+                        <button type="submit" className="btn btn-primary m-3" onClick={demoLog}>Demo Login</button>
 
                     </form>
                 </div>

@@ -21,8 +21,12 @@ function App() {
       <newContext.Provider value={{ setdm, dm, count, setCount }}>
         <Navbar />
         <Switch>
-          <Route exact path="/"><Signup /></Route>
-          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/">
+            {logged ? <Redirect to="/home" /> : <Signup />}
+          </Route>
+          <Route exact path="/login">
+            {logged ? <Redirect to="/home" /> : <Login />}
+          </Route>
           <Route exact path="/home">
             {logged ? <Expense /> : <Redirect to="/login" />}
           </Route>
