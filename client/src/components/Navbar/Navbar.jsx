@@ -43,7 +43,7 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <span className="nav-link" style={{ color: "white" }}> {id ? `Welcome ${name}` : ''}</span>
                             </li>
-                            <li className="nav-item active">
+                            <li className="nav-item">
                                 <NavLink className="nav-link" to="/home">Home</NavLink>
                             </li>
                             {/* <li className="nav-item">

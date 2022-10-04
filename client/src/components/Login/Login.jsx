@@ -3,6 +3,7 @@ import logo from './log.svg';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { newContext } from '../../App';
+import "./login.css"
 const Login = () => {
 
     const { setCount } = useContext(newContext);
@@ -88,28 +89,29 @@ const Login = () => {
 
     return (
         <>
-            <div className="container row m-auto mt-5 shadow p-3 mb-2 bg-body rounded">
-                <div className="col-md-6 d-flex justify-content-center align-items-center">
-                    <img src={logo} alt="logo" className='w-75 h-75' />
+            <div className="container m-auto mt-5 dcenter">
+                <div className="shadow-lg p-3 mb-2 bg-body rounded row">
+                    <div className="col-md-6 d-flex justify-content-center align-items-center">
+                        <img src={logo} alt="logo" className='w-75 h-75' />
+                    </div>
+                    <div className="col-md-6 mt-4">
+                        <h2>Login Form</h2>
+                        <form>
+
+                            <div className="mb-3">
+                                <label className="form-label">Username</label>
+                                <input type="text" className="form-control" name="username" value={log.username} onChange={handelInp} id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            </div>
+                            <div className="mb-3">
+                                <label className="form-label">Password</label>
+                                <input type="password" className="form-control" name="password" value={log.password} onChange={handelInp} id="exampleInputPassword1" />
+                            </div>
+                            <button type="submit" className="btn btn-primary" onClick={postData} style={{ background: "indigo" }}>Login</button>
+                            <button type="submit" className="btn btn-primary m-3" onClick={demoLog} style={{ background: "indigo" }}>Demo Login</button>
+
+                        </form>
+                    </div>
                 </div>
-                <div className="col-md-6 mt-4">
-                    <h2>Login Form</h2>
-                    <form>
-
-                        <div className="mb-3">
-                            <label className="form-label">Username</label>
-                            <input type="text" className="form-control" name="username" value={log.username} onChange={handelInp} id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Password</label>
-                            <input type="password" className="form-control" name="password" value={log.password} onChange={handelInp} id="exampleInputPassword1" />
-                        </div>
-                        <button type="submit" className="btn btn-primary" onClick={postData} style={{ background: "indigo" }}>Login</button>
-                        <button type="submit" className="btn btn-primary m-3" onClick={demoLog} style={{ background: "indigo" }}>Demo Login</button>
-
-                    </form>
-                </div>
-
             </div>
         </>
     )
