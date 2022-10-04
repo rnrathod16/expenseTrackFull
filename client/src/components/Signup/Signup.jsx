@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import img from '../Login/log.svg';
+import img from './img.svg';
 import { useHistory } from 'react-router-dom'
 const Signup = () => {
 
@@ -48,7 +48,7 @@ const Signup = () => {
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" name="password" value={getData.password} onChange={handelInp} id="exampleInputPasswo" />
                         </div>
-                        <button type="submit" className="btn btn-primary" onClick={postData}>Signup</button>
+                        <button type="submit" className="btn btn-primary" onClick={postData} style={{ background: "indigo" }}>Signup</button>
                     </form>
                 </div>
                 <div className="col-md-6 d-flex justify-content-center align-items-center">

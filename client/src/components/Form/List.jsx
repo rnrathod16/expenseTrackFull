@@ -1,14 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import 'boxicons';
 import "./List.css"
-import { useEffect } from 'react';
 import axios from 'axios'
 import { newContext } from '../../App';
 
 const List = () => {
 
     // const [list, setlist] = useState([]);
-    const { setdm, dm, setCount } = useContext(newContext);
+    const { dm, setCount } = useContext(newContext);
 
     // const getData = async () => {
 
@@ -48,7 +47,7 @@ const List = () => {
         <>
             <div className="d-flex flex-column">{dm.length === 0 ? <h4 className='text-center mt-5'>No Transactions</h4> :
                 <><h4 className='text-center mt-5'>History</h4>
-                    <div className='scrol'>
+                    <div className='scrol mb-5'>
                         {dm.map((val, i) => {
                             const color = getColor(val.type);
                             return <Transactions category={val} key={i} color={color} fun={deleteNote} />

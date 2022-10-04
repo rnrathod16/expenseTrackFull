@@ -104,8 +104,8 @@ const Login = () => {
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" name="password" value={log.password} onChange={handelInp} id="exampleInputPassword1" />
                         </div>
-                        <button type="submit" className="btn btn-primary" onClick={postData}>Login</button>
-                        <button type="submit" className="btn btn-primary m-3" onClick={demoLog}>Demo Login</button>
+                        <button type="submit" className="btn btn-primary" onClick={postData} style={{ background: "indigo" }}>Login</button>
+                        <button type="submit" className="btn btn-primary m-3" onClick={demoLog} style={{ background: "indigo" }}>Demo Login</button>
 
                     </form>
                 </div>

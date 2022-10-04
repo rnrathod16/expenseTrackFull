@@ -6,11 +6,11 @@ const Expense = () => {
 
     return (
         <>
-            <div className="container row ml-auto mr-auto mt-5" style={{ height: "72vh" }}>
-                <div className="col-md-6 d-flex align-items-center justify-content-center">
+            <div className="container row ml-auto mr-auto" style={{ height: "72vh" }}>
+                <div className="col-md-6 d-flex justify-content-center">
                     <Graph />
                 </div>
-                <div className="col-md-6 d-flex justify-content-center">
+                <div className="col-md-6 d-flex justify-content-center mt-5">
                     <Form />
                 </div>
             </div>

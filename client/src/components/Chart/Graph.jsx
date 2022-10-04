@@ -24,6 +24,7 @@ const Graph = () => {
     // getAvail(rest.transactions)
     const config = {
         data: {
+
             datasets: [{
                 data: getSum(dm),
                 backgroundColor:
@@ -36,7 +37,8 @@ const Graph = () => {
                 ,
                 hoverOffset: 4,
                 borderRadius: 30,
-                spacing: 10
+                spacing: 10,
+                borderColor: '#6c757d'
             }]
         },
         options: {
