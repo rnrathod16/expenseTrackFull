@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import img from './img.svg';
-import { useHistory } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import "./signup.css"
 const Signup = () => {
 
@@ -51,7 +51,11 @@ const Signup = () => {
                                 <input type="password" className="form-control" name="password" value={getData.password} onChange={handelInp} id="exampleInputPasswo" />
                             </div>
                             <button type="submit" className="btn btn-primary" onClick={postData} style={{ background: "indigo" }}>Signup</button>
+
                         </form>
+                        <div style={{ marginTop: "13px" }}>
+                            Already have Account ? <NavLink className="nav-link" to="/login" style={{ display: "inline-block", padding: 0 }}>Login</NavLink>
+                        </div>
                     </div>
                     <div className="col-md-6 d-flex justify-content-center align-items-center">
                         <img src={img} alt="logo" className='w-75 h-75' />

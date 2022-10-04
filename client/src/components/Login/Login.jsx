@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import logo from './log.svg';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { newContext } from '../../App';
 import "./login.css"
@@ -110,6 +110,9 @@ const Login = () => {
                             <button type="submit" className="btn btn-primary m-3" onClick={demoLog} style={{ background: "indigo" }}>Demo Login</button>
 
                         </form>
+                        <div style={{ marginTop: "13px", marginBottom: "34px" }}>
+                            Don't have Account ? <NavLink className="nav-link" to="/" style={{ display: "inline-block", padding: 0 }}>Signup</NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
